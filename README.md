@@ -11,6 +11,9 @@ This repository demonstrates a **Retrieval-Augmented QA pipeline** built with Py
 
 The pipeline is designed to take queries, retrieve the most relevant passages from a dataset, and generate an answer using a language model.
 
+![Hugging Face Dataset - SQuAD](images/HuggingFaceSQUAD.png)
+> Image of Hugging Face Viewer showing the dataset.
+
 ---
 
 ## Pipeline Overview
