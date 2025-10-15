@@ -17,11 +17,6 @@ class LoadDataset:
 		self.documents = []
 	
 	def load_text_corpus(self):
-		"""Load a Hugging Face dataset and extract a list of textual documents.
-		Default: SQuAD -> extract "context" fields from examples.
-
-		Returns list of dicts: {'id': str, 'text': str, 'meta': {...}}
-		"""
 		logger.info(f"Loading dataset {self.dataset_name} split={self.split}")
 		
 		ds = load_dataset(self.dataset_name, split=self.split)
