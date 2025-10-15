@@ -35,9 +35,6 @@ class Database:
 		self.pooled = None
 		
 	def chunks_from_text(self, text):
-		"""Simple heuristic chunking: split text into sentences then accumulate until max_tokens (approx by words).
-		Overlap in words between chunks.
-		"""
 		sents = sent_tokenize(text)
 		chunks = []
 		cur_chunk = []
@@ -67,7 +64,6 @@ class Database:
 		return chunks
 
 	def build_chunks(self):
-		"""Return list of chunks: {'id', 'doc_id', 'text', 'meta'}"""
 		chunks = []
 		for d in self.documents:
 			doc_id = d['id']
@@ -83,8 +79,6 @@ class Database:
 		self.chunks = chunks
 
 	def build_embeddings(self):
-		"""Return embeddings matrix (N x D) and list of ids.
-		"""
 		logger.info(f"Loading embedding model: {self.model_name}")
 		self.embed_model = SentenceTransformer(self.model_name)
 		
