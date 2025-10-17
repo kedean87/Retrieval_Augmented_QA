@@ -149,7 +149,7 @@ cat output.json
 [{"answer":"the Virgin Mary","question":"Who founded Notre Dame University?"}]
 ```
 
-![AWS Console CloudShell Command](images/RAGQawsPrediction.png)
+![AWS Console CloudShell Command](images/RAGQAawsPrediction.png)
 > Showing that the command runs from both the terminal and the CloudShell in AWS Console for SageMaker AI
 
 ---
