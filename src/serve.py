@@ -6,16 +6,9 @@ app = Flask(__name__)
 
 # Initialize your pipeline once (so it's loaded in memory)
 rag_pipeline = Pipeline(dataset_name="squad", query=["dummy question"])
-rag_pipeline.run_pipeline()  # optional warm-up
-
-@app.route("/ping", methods=["GET"])
-def ping():
-    """Health check endpoint for SageMaker"""
-    return "OK", 200
 
 @app.route("/invocations", methods=["POST"])
 def invocations():
-    """Inference endpoint"""
     data = request.get_json()
     questions = data.get("query", [])
     if not isinstance(questions, list):
