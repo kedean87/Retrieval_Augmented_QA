@@ -93,7 +93,7 @@ class Pipeline:
 				
 				for idx in I:
 					try:
-						cid = ids[int(idx)]
+						cid = self.dbase.ids[int(idx)]
 						self.retrieved_texts.append(self.id2chunk[cid])
 					except Exception:
 						pass
@@ -161,7 +161,7 @@ class Pipeline:
 				
 				for idx in I:
 					try:
-						cid = ids[int(idx)]
+						cid = dbase.ids[int(idx)]
 						self.retrieved_texts.append(id2chunk[cid])
 					except Exception:
 						pass
