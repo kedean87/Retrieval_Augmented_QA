@@ -31,7 +31,18 @@ def predict():
         rag_pipeline.run_pipeline()
         results.append({"question": query, "answer": rag_pipeline.answer})
 
-    return jsonify({"predictions": results}), 200
+    response = {
+        "predictions": [
+            {
+                "results": results
+            }
+        ]
+    }
+        
+    final_json = json.dumps(response)
+    print(f"Final response body: {final_json}")
+    
+    return jsonify(final_json)
 
 if __name__ == "__main__":
     # IMPORTANT: Use port 8080 for Vertex AI.
